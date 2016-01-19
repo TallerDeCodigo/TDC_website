@@ -59,7 +59,7 @@
 				//setup_postdata($each_portfolio); ?>
 			
 				<article class="each_team_item">
-				<?php the_post_thumbnail("full"); ?>
+				<?php the_post_thumbnail("thumbnail"); ?>
 					<section class="card">	
 					<?php
 						echo "<h3>".get_the_title()."</h3>";
