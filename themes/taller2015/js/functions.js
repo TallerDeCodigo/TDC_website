@@ -57,6 +57,33 @@
 		  }
 		}
 
+		var scrollToElement = function(el, ms){
+		    var speed = (ms) ? ms : 600;
+		    $('html,body').animate({
+		        scrollTop: $(el).offset().top - 38
+		    }, 
+		    speed,
+		    'easeInBack');
+		}
+
+		// specify id of element and optional scroll speed as arguments
+		
+
+		$('.anchor-scroll').click( function(){
+			var hash = $(this).data('nav');
+			scrollToElement(hash, 800);
+		});
+
+		$('.menu_trigger').on('click', function(){
+			$(this).hide();
+			$('.master_header.cloned .main_menu').fadeIn('fast', 'easeInBack');
+		});
+
+		$('.close_menu').on('click', function(){
+			$('.menu_trigger').show();
+			$('.master_header.cloned .main_menu').fadeOut('fast', 'easeInBack');
+		});
+
 
 	});
 

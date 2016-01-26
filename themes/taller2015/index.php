@@ -77,8 +77,8 @@
 			<h2><?php echo $contact_page->post_title; ?></h2>
 			<img class="static-map" src="https://maps.googleapis.com/maps/api/staticmap?scale=2&center=19.3937908,-99.1713553&zoom=16&size=1280x200&key=AIzaSyDq1KS_swNYGVo7LRKyEf7vGLaSqGrQcGs">
 			<section class="addr_info">
-				Luz Saviñon 20 - PH,<br>
-				Col. Del Valle<br>
+				Luz Saviñon 20 - PH, <br>
+				Col. Del Valle <br>
 				México, D.F.
 			</section>
 			<form class="contact_form">
