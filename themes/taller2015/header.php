@@ -22,7 +22,7 @@
 		<header class="master_header clearfix">
 			<div class="wrapper mil280">
 				<h1 class="logo">
-					Taller de Código
+					<a href="<?php echo site_url(); ?>">Taller de Código</a>
 				</h1>
 				<ul class="main_menu">
 					<li><a href="<?php echo site_url('#about-us'); ?>">¿Qué somos?</a></li>
