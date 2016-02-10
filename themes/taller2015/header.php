@@ -20,7 +20,7 @@
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
 		<div class="container">
-		<header class="master_header clearfix">
+		<header class="master_header cast_shadow clearfix">
 			<div class="wrapper mil280">
 				<a class="menu_trigger"><i class="material-icons">&#xE5D2;</i></a>
 				<h1 class="logo">
