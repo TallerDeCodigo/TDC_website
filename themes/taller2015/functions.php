@@ -23,13 +23,15 @@
 
 		// scripts
 		wp_enqueue_script( 'plugins', JSPATH.'plugins.js', array('jquery'), '1.0', true );
-		wp_enqueue_script( 'functions', JSPATH.'functions.js', array('plugins'), '1.0', true );
+		wp_enqueue_script( 'tinycarousel', JSPATH.'jquery.tinycarousel.min.js', array('jquery', 'plugins'), '1.0', true );
+		wp_enqueue_script( 'functions', JSPATH.'functions.js', array('plugins', 'tinycarousel'), '1.0', true );
 
 		// localize scripts
 		wp_localize_script( 'functions', 'ajax_url', admin_url('admin-ajax.php') );
 
 		// styles
 		wp_enqueue_style( 'styles', get_stylesheet_uri() );
+		wp_enqueue_style( 'carousel', CSSPATH.'tinycarousel.css' );
 
 	});
 
@@ -260,6 +262,25 @@
 				return FALSE;
 			}
 
+		}
+		return FALSE;
+	}
+
+
+	function send_email_comments(){
+		if(!isset($_POST['contact_form_action'])){
+			extract($_POST);
+			$to = array("john@tallerdecodigo.com");
+			$message  = "";
+			$message .= "Nombre: ".$cl_name."\n";
+			$message .= "Email: ".$cl_email."\n";
+			$message .= "Empresa: ".$cl_empresa."\n";
+			$message .= "Mensaje: ".$cl_comment."\n";
+
+			$subject  = "Website TDC ".$cl_name." escribió";
+			wp_mail($to, $subject, $message);
+
+			wp_redirect(site_url('#contact-us?message=sent'));
 		}
 		return FALSE;
 	}

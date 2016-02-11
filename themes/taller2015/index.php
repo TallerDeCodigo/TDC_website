@@ -81,38 +81,55 @@
 		</section> <!-- END team -->
 
 
-		<section class="single-card-section work">
+		<section class="single-card-section work clearfix">
 			<div id="work" class="head_tag work">
 				<h2>Proyectos</h2>
 			</div>
-			<div class="wrapper nueve60">
-			<?php 
-				$args = array(
-								"post_type" 	 => "work",
-								"posts_per_page" => 9,
-								"post_status" 	 => "publish",
-								"orderby" 	 	 => "post_date",
-								"order" 	 	 => "ASC",
-							);
-				$work = new WP_Query($args);
-				if( $work->have_posts() ): 
-					while( $work->have_posts() ):
-						$work->the_post(); ?>
-				
-					<article class="each_work_item cast_shadow">
-					<?php the_post_thumbnail("full"); ?>
-						<section class="card_content">	
+			<div id="product_gallery" class="slider_products clearfix">
+				<div class="viewport">
+					<section class="overview">
+						<?php 
+						$args = array(
+										"post_type" 	 => "work",
+										"posts_per_page" => 9,
+										"post_status" 	 => "publish",
+										"orderby" 	 	 => "post_date",
+										"order" 	 	 => "ASC",
+									);
+						$work = new WP_Query($args);
+						if( $work->have_posts() ): 
+							while( $work->have_posts() ):
+								$work->the_post();
+								$terms = get_the_terms($post->ID, 'category');
+								//print_r($terms); ?>
+						
+							<article class="each_work_item cast_shadow">
+							<?php the_post_thumbnail("full"); ?>
+								<section class="card_content clearfix">	
+								<?php
+									echo the_content(); 
+									$link = get_post_meta($post->ID, '_link_meta', TRUE);
+									if($link !== '') 
+										echo "<a class='link icon' href='$link' target='_blank'><i class='material-icons'>&#xE157;</i></a>"; 
+									if(!empty($terms)): ?>
+									<section class="categories">
+										<?php
+										foreach ($terms as $each_category) {
+											echo "<a class='taglike'>$each_category->name</a>";
+										} ?>
+									</section>
+									<?php
+									endif; ?>
+								</section>
+							</article>
 						<?php
-							echo the_content(); 
-							$link = get_post_meta($post->ID, '_link_meta', TRUE);
-							if($link !== '') 
-								echo "<a class='link icon' href='$link'><i class='material-icons'>&#xE157;</i></a>"; 
-							?>
-						</section>
-					</article>
-			<?php
-				endwhile; endif; ?>
-			</div> <!-- END wrapper -->
+						endwhile; endif; ?>
+					</section>
+					<div class="clearfix"></div>
+					<a class="buttons prev">Anterior</a>
+					<a class="buttons next">Siguiente</a>
+				</div> <!-- END viewport -->
+			</div>
 		</section> <!-- END work -->
 	
 	<?php $contact_page = get_page_by_path('contact-us'); ?>
@@ -122,10 +139,11 @@
 			</div>
 			<img class="static-map" src="http://maps.google.com/maps/api/staticmap?scale=2&center=19.3938000,-99.1713557&zoom=17&size=680x680&markers=size:mid%7Ccolor:green%7Clabel:TDC%7C19.3937908,-99.1713553&key=AIzaSyDq1KS_swNYGVo7LRKyEf7vGLaSqGrQcGs&sensor=false">
 
-			<form class="contact_form">
+			<form class="contact_form" action="<?php echo site_url('#contact-us?message=sent'); ?>" method="POST">
 				<input type="text" name="cl_name" placeholder="Nombre">
 				<input type="text" name="cl_email" placeholder="Email">
 				<input type="text" name="cl_empresa" placeholder="Empresa">
+				<input type="hidden" name="contact_form_action">
 				<textarea name="cl_comment" placeholder="Mensaje..."></textarea>
 				<input type="submit" value="Enviar">
 			</form>

@@ -16,6 +16,13 @@
 	</head>
 
 	<body>
+	<?php
+		if(isset($_GET['message'])): ?>
+		<div class="success_message">
+			
+		</div>
+	<?php
+		endif; ?>
 		<!--[if lt IE 9]>
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
@@ -27,12 +34,18 @@
 					<a class="anchor-scroll" data-nav="#top">Taller de Código</a>
 				</h1>
 				<ul class="main_menu">
-					<a class="close close_menu"><i class="material-icons">&#xE5CD;</i></a>
+					<a class="close close_menu"><i class="material-icons">&#xE5D2;</i></a>
 					<a rel="nofollow" class="logo_monograma"></a>
 					<li><a class="anchor-scroll" data-nav="#about-us">¿Qué es TDC?</a></li>
 					<li><a class="anchor-scroll" data-nav="#process">Proceso</a></li>
-					<li><a class="anchor-scroll" data-nav="#work">Trabajo</a></li>
+					<li><a class="anchor-scroll" data-nav="#work">Proyectos</a></li>
 					<li><a class="anchor-scroll" data-nav="#contact-us">Contacto</a></li>
+					<li class="bottom"><small >Taller de Código <?php echo date('Y'); ?> &copy; <br>
+					Todos los derechos reservados</small></li>
+				</ul>
+				<ul class="social_media clearfix">
+					<li><a target="_blank" href="https://www.facebook.com/tallerdecodigo/" class="facebook" ></a></li>
+					<li><a target="_blank" href="https://twitter.com/tallerdecodigo" class="twitter" ></a></li>
 				</ul>
 			</div><!--  END wrapper -->
 		</header>

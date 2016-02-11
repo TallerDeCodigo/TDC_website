@@ -69,10 +69,10 @@ h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
 .hidden{display: none!important;}
 
 /*** GENERAL ***/
-.container{}
+.container{background-color:rgba(251, 247, 247, 0.5);}
 .master_header{background-color:#003B49;padding:0.1px 0;}
 h1.logo,
-h2.logo{text-indent:-999px;overflow:hidden;width:146px;height:50px;background:url('images/logo_TDC.svg') no-repeat;float:left;margin:1.5rem 0 1.5rem 0;background-size:contain;}
+h2.logo{text-indent:-999px;overflow:hidden;width:146px;height:50px;background:url('images/logo_TDC.svg') no-repeat;float:left;margin:1.5rem 0 1.5rem 0;background-size:contain;cursor:pointer;}
 .wrapper.nueve60{width:960px;margin:0 auto;}
 .logo.full{text-indent: -999px; overflow: hidden; display: block; width: 420px; height: 130px; background: url('images/logo_TDC_full.png') no-repeat;position: absolute;top: 18vh;margin: 0 auto;left: 0;right: 0; background-size: contain;}
 .logo>a{width: 100%; height: 100%; display: block;}
@@ -80,21 +80,31 @@ h2.logo{text-indent:-999px;overflow:hidden;width:146px;height:50px;background:ur
 
 /*** Main menu ***/
 .main_menu{width:auto;text-align:right;float:left;margin: 1.8rem 0 0 1.2rem;border-left:2px solid #C7D443;letter-spacing:1px;padding: 0.7rem 0 0 3rem;}
-.main_menu li{display:inline-block;margin:1rem 6vw 1rem 0;}
+.main_menu li{display:inline-block;margin:1rem 4rem 1rem 0;}
+.master_header .main_menu>li.bottom{display: none;}
+.main_menu li:last-of-type{margin-right: 0;}
 .main_menu li>a{color:#C7D443;text-decoration:none;font-size:1.4rem;font-weight:500;letter-spacing:1px;cursor:pointer;}
 
 .menu_trigger{display:none;}
 .close_menu{display: none;}
 
+.social_media{list-style: none;float: right;display: block;margin: 3.2rem 0 0 0;padding: 0;width: 140px;;}
+.social_media li{display: inline-block;padding: 1px;margin: 1px;}
+.social_media .facebook{width: 25px; height: 25px; background-image: url('images/social_media.png');display: block;}
+.social_media .twitter{width: 25px; height: 25px; background-image: url('images/social_media.png');background-position-x: 26px;display: block;}
+
 /*Cloned*/
-.master_header.cloned .main_menu{position:absolute;background-color:rgba(39, 40, 34, 0.97);height:100vh;top:0;left:0;margin:0;border:none;width:30vw;padding:4rem 2rem;z-index:80;display:none;}
-.master_header.cloned .logo{margin:0.75rem 0 0.75rem 1rem;width:230px;height:27px;position:relative;display:inline-block;float:none;vertical-align:middle;background:url('images/logo_TDC_small.svg') no-repeat;background-size:contain;}
+.master_header.cloned .main_menu{position:absolute;background-color:rgba(39, 40, 34, 0.97);height:100vh;top:0;left:0;margin:0;border:none;width:36vw;padding:4rem 2rem;z-index:80;display:none;}
+.master_header.cloned .logo{margin:0.75rem 0 0.75rem 0rem;width:230px;height:27px;position:relative;display:inline-block;float:none;vertical-align:middle;background:url('images/logo_TDC_small.svg') no-repeat;background-size:contain;cursor:pointer;}
 .master_header.cloned .main_menu>li{display: block;text-align: center;margin: 2rem 2rem 2rem auto;}
+.master_header.cloned .main_menu>li.bottom{bottom: 3rem; position: absolute; text-align: center;width: 95%;margin: 0;}
 .master_header.cloned .main_menu>li>a{font-weight:400;font-size:1.35rem;font-family:"Roboto Mono", "Roboto", Helvetica, Arial, sans-serif;letter-spacing:1.2px;}
+
+.master_header.cloned .social_media{display: none;}
 
 .master_header.cloned .menu_trigger{ display: inline-block; vertical-align: middle; line-height: 1rem; color: #FFF; cursor: pointer;}
 .master_header.cloned .close_menu{ display: block; position: absolute; top: 1rem; right: 1rem; color: #FFF; cursor: pointer; }
-.master_header.cloned .logo_monograma{display: block; width: 120px; height: 120px; background: url('images/logo_TDC_monograma.svg');background-repeat: no-repeat;background-size: contain;margin: 1rem auto;}
+.master_header.cloned .logo_monograma{display: block; width: 80px; height: 92px; background: url('images/logo_TDC_monograma.svg');background-repeat: no-repeat;background-size: contain;margin: 0rem auto;}
 /*Single card*/
 .single-card-section{position:relative;padding:0.1px 0;margin:6rem auto 0 auto;}
 .single-card-section.top{width:100%;margin:0;overflow:hidden;height:94.5vh;}
@@ -116,15 +126,26 @@ h2.logo{text-indent:-999px;overflow:hidden;width:146px;height:50px;background:ur
 
 /* Work */
 .single-card-section.process{background-color: #003A49;padding: 6rem 0 4rem 0;height: 95.4vh;}
-.single-card-section.work{background-color: #F4F4F4;padding: 4rem 1.5rem;margin-top: 0; }
-.each_work_item{display: inline-block;margin: 0 1.5rem 1.5rem 0;position: relative;cursor: pointer!important;width: 300px;vertical-align: top;overflow: hidden;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;}
-.each_work_item:nth-of-type(3n){margin-right:0;}
+.single-card-section.work{padding: 4rem 1.5rem;margin-top: 0;height: 84.7vh; }
+.each_work_item{display: inline-block;margin: 0 3.6rem 1.5rem 0;position: relative;cursor: pointer!important;width: 300px;vertical-align: top;overflow: hidden;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;height: 52vh;max-height: 480px;min-height: 300px;float: left;}
 .each_work_item>img{display: block;height: auto;width: 100%;-moz-border-radius: ;;}
 .each_work_item a{color: #C3D500; text-align: center;text-decoration: none;display: block;margin: 0 auto;cursor: pointer;}
 .each_work_item a:hover{text-decoration: underline;}
 .each_work_item h3{text-align: center;margin: 0 0 1rem 0;color: #FFF;letter-spacing: 1px;font-weight: 500;font-family: "Roboto", Helvetica, Arial, sans-serif;font-size: 1.8rem;}
-.each_work_item .card_content{padding:1.5rem;color:#757575;font-size:1.2rem;}
-.link.icon{color:#757575;display:block;float:right;line-height:1rem;}
+.each_work_item .card_content{padding:1.5rem;color:#757575;font-size:1.2rem;height:240px;position:relative;}
+.link.icon{color:#757575;display:block;float:right;line-height:1rem;position:absolute;right:1.5rem;bottom:0rem;}
+.categories{position:absolute;bottom:0.5rem;left:1.5rem;font-size:1.1rem;margin-bottom:-3.8rem;}
+.categories .taglike{color: #FFF;background-color: #C3D500;float: left;margin: 0.25rem;padding: 0.25rem 0.5rem;line-height: 1.8rem;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;;}
+
+
+/*Slider*/
+.slider_products{height:520px;margin-top:12vh;}
+.slider_products .viewport{overflow: hidden; width: 100%; display: block;position: relative;height: 500px;}
+.slider_products .next,
+.slider_products .prev{text-transform:uppercase;font-weight:500;letter-spacing:1px;position:absolute;color:#003A49;position:absolute;bottom:0;cursor:pointer;}
+.slider_products .next{right:0;}
+.slider_products .prev{left:0;}
+.slider_products .overview{position: absolute; left: 0; top: 0;margin-left: -15rem;}
 
 /*Process*/
 .process_cards{width: 50%; float: left;margin-bottom: 4rem;}
@@ -148,10 +169,11 @@ h2.logo{text-indent:-999px;overflow:hidden;width:146px;height:50px;background:ur
 .static-map{width:100%;filter:grayscale(1) brightness(.28);-webkit-filter:grayscale(1) brightness(.28);}
 .contact_form{display:block;width:420px;z-index:99;left:15vw;top:30vh;position:absolute;}
 .contact_form input[type=text]{display:block; margin:0 0 1rem 0; line-height:3rem; text-indent: 0.5rem; font-family: "Roboto Mono", "Roboto", Helvetica, Arial, sans-serif;font-size:1.2rem;letter-spacing:0.6px;width:100%;border:1px solid #FFF;color:#FFF;background-color:transparent;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
-.contact_form textarea{font-family:"Roboto Mono", "Roboto", Helvetica, Arial, sans-serif;width:100%;resize:none;height:12rem;border:1px solid #FFF;padding:0.5rem;font-size:1.2rem;color:#202020;background-color:transparent;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
-.contact_form input[type=submit]{background-color:#C4D600;color:#003B49;border:none;padding:0.5rem 1rem;letter-spacing:1px;font-family:"Roboto Mono", "Roboto", Helvetica, Arial, sans-serif;float:right;margin:1rem 0;text-transform:uppercase;font-weight:600;}
+.contact_form textarea{font-family:"Roboto Mono", "Roboto", Helvetica, Arial, sans-serif;width:100%;resize:none;height:12rem;border:1px solid #FFF;padding:0.5rem;font-size:1.2rem;color:#FFF;background-color:transparent;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
+.contact_form input[type=submit]{background-color:#C4D600;color:#003B49;border:none;padding:0.5rem 1rem;letter-spacing:1px;font-family:"Roboto Mono", "Roboto", Helvetica, Arial, sans-serif;float:right;margin:1rem 0;text-transform:uppercase;font-weight:600;cursor:pointer;}
 .addr_info{position:absolute;right:6rem;top:12rem;text-align:right;font-weight:700;font-size:1.8rem;}
-
+.contact_form textarea:focus,
+.contact_form input:focus{outline-color: rgb(196, 214, 0);outline-width: 2px; }
 /*Footer*/
 .dafooter{height: 25px; width: 100%; display: block; margin:0; padding: 0;background-color: #C4D600;}
 

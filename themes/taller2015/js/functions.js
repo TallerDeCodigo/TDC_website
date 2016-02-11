@@ -4,10 +4,6 @@
 
 	$(function(){
 
-
-		console.log('hello from functions.js');
-
-
 		/**
 		 * Validación de emails
 		 */
@@ -82,6 +78,11 @@
 		$('.close_menu').on('click', function(){
 			$('.master_header.cloned .menu_trigger').show();
 			$('.master_header.cloned .main_menu').fadeOut('fast', 'easeInBack');
+		});
+
+		$("#product_gallery").tinycarousel({
+		    bullets  : true,
+		    infinite  : true
 		});
 
 
