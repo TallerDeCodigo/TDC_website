@@ -7,7 +7,7 @@
 
 	add_action('add_meta_boxes', function(){
 
-		// add_meta_box( id, title, name_meta_callback, post_type, context, priority );
+		add_meta_box( 'link_metabox', 'Link a la aplicación', 'link_meta_callback', 'work', 'normal', 'high' );
 
 	});
 
@@ -17,10 +17,10 @@
 
 
 
-	function name_meta_callback($post){
-		// $name = get_post_meta($post->ID, '_name_meta', true);
-		// wp_nonce_field(__FILE__, '_name_meta_nonce');
-		// echo "<input type='text' class='widefat' id='name' name='_name_meta' value='$name'/>";
+	function link_meta_callback($post){
+		$link = get_post_meta($post->ID, '_link_meta', true);
+		wp_nonce_field(__FILE__, '_link_meta_nonce');
+		echo "<input type='text' class='widefat' id='link' name='_link_meta' value='$link'/>";
 	}
 
 
@@ -44,8 +44,8 @@
 			return $post_id;
 
 
-		if ( isset($_POST['_name_meta']) and check_admin_referer(__FILE__, '_name_meta_nonce') ){
-			update_post_meta($post_id, '_name_meta', $_POST['_name_meta']);
+		if ( isset($_POST['_link_meta']) and check_admin_referer(__FILE__, '_link_meta_nonce') ){
+			update_post_meta($post_id, '_link_meta', $_POST['_link_meta']);
 		}
 
 

@@ -60,7 +60,7 @@
 		var scrollToElement = function(el, ms){
 		    var speed = (ms) ? ms : 600;
 		    $('html,body').animate({
-		        scrollTop: $(el).offset().top - 38
+		        scrollTop: $(el).offset().top - 42
 		    }, 
 		    speed,
 		    'easeInBack');
@@ -80,7 +80,7 @@
 		});
 
 		$('.close_menu').on('click', function(){
-			$('.menu_trigger').show();
+			$('.master_header.cloned .menu_trigger').show();
 			$('.master_header.cloned .main_menu').fadeOut('fast', 'easeInBack');
 		});
 
